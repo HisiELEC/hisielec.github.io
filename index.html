@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HisiELEC</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <img src="https://i.imgur.com/8Xk3Aqi.png" width="64" height="64" />
+
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item"> LibreELEC [HisiELEC] - Instalação no Pixel Plus</a>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a
+                class="button is-primary"
+                href="https://github.com/hisielec/LibreELEC/releases"
+                target="_blank"
+              >
+                <strong>Download</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="columns is-centered">
+        <div class="column is-two-thirds">
+          <h1 class="title has-text-centered">Tutorial</h1>
+
+          <div class="content">
+            <h2 class="subtitle is-5">Status do projeto</h2>
+            <article class="message is-warning">
+              <div class="message-body">
+                <p>
+                  - Decodificação de vídeo via hardware [MPEG-4 / MPEG-2 / H.264
+                  / H.265 / VC1]
+                </p>
+                <p>
+                  - Transcodificação de Áudio 5.1/7.1 AAC/DD+/DTS/Dolby True HD para DD 5.1
+                </p>
+                <p>- Áudio HD Passthrough</p>
+                <p>- Somente DVB-C (Cabo)</p>
+                <p>
+                  - Ainda possui alguns bugs. :p
+                </p>
+              </div>
+            </article>
+
+            <p>
+              Como Debian do grande leandrotsampa, ele roda no <b>SD</b>.
+            </p>
+
+            <p>
+              1. Vá no botão
+              <span class="has-text-success has-text-weight-bold"
+                >Download</span
+              >
+              acima e baixe
+              <span class="has-text-danger has-text-weight-bold"
+                >update-libreelec-*.upk</span
+              >
+              e
+              <span class="has-text-danger has-text-weight-bold"
+                >LibreELEC-Hisilicon.aarch64-*.img.gz</span
+              >
+              mais recentes.
+            </p>
+            <p>
+              2. Descompacte o arquivo
+              <span class="has-text-danger has-text-weight-bold"
+                >LibreELEC-Hisilicon.aarch64-*.img.gz</span
+              >
+              e grave a IMG ao SD usando
+              <span class="has-text-weight-bold"><a target="_blank" href="https://sourceforge.net/projects/win32diskimager/files/latest/download">Win32DiskImager</a></span>
+              ou <span class="has-text-weight-bold">dd</span>.
+
+              <pre><code>gunzip -c LibreELEC-Hisilicon.aarch64-*.img.gz | dd of=/dev/sdX conv=fsync</code></pre>
+            </p>
+
+
+            <p>
+              3. Instale a atualização <span class="has-text-danger has-text-weight-bold"
+              >update-libreelec-*.upk</span
+            > no Android.
+            </p>
+
+            <p>
+              4. Insira o SD e, ao religar, você terá alguns segundos para escolher o sistema:
+              <p><span class="has-text-danger-dark has-text-weight-bold">Android - Tecla vermelha</span></p>
+              <p><span class="has-text-link-dark has-text-weight-bold">LibreELEC - Tecla azul</span></p>
+            </p>
+
+            <p>
+              5. Escolha <span class="has-text-link-dark has-text-weight-bold">LibreELEC</span>.
+               Na primeira vez, o cartão será redimensionado. Aguarde.
+            </p>
+
+            <p>6. Agora, precisaremos restaurar a imagem (add-ons e as configurações).</p>
+
+            <p>7. Aguarde o Kodi abrir e aperte a tecla vermelha para entrar nas configurações do LibreELEC.</p>
+
+            <img src="https://i.imgur.com/IEYlqq4.png" alt=""/>
+
+            <p>8. Se for usar wifi, conecte-se a sua rede em <span class="has-text-success has-text-weight-bold">Conexões</span></p>
+            <p> Prefira cabo, se puder. </p>
+
+            <p>9. Depois, vá em  <span class="has-text-success has-text-weight-bold">Sistema -> Restaurar Imagem Pixel Plus.</span></p>
+
+            <p>10. Aguarde o download e clique em <span class="has-text-success has-text-weight-bold">Sim</span> para restaurar.</p>
+            <img src="https://i.imgur.com/LdMa4PB.png" alt=""/>
+
+
+            <p>11. O sistema será reiniciado. Aguarde. Não desligue. Pode levar um tempinho nesta etapa.</p>
+
+            <p>12. No fim do processo, todos os add-ons necessários serão restaurados. Se for usar wifi, refaça as configurações.</p>
+
+            <p>13. Se estiver usando wifi, alguns serviços podem não funcionar (oscam, Elementum) de imediato, reinicie o sistema.
+            <p>O Oscam pode ser acessado pelo endereço http://ip_do_pixel:8888 com usuário e senha iguais a <span class="has-text-weight-bold">oscam</span></p></p>
+
+            <p>14. Faça a busca de canais. Aperte a tecla verde do controle e vá em <span class="has-text-success has-text-weight-bold">Busca de Canais</span> e entre com uma frequência onde tenha canais na sua região.
+              <p>Ou faça a busca por <span class="has-text-weight-bold">http://ip_do_pixel:9981</span</p></p>
+                <img src="https://i.imgur.com/c8s6DWO.png" alt="">
+                <img src="https://i.imgur.com/fHcUysK.png" alt="">
+                <img src="https://i.imgur.com/OawbK4U.png" alt="">
+
+            <p>
+              15. O EIT EPG foi desativado. Se deseja ativá-lo, entre em http://ip_do_pixel:9981
+              e vá em Configuration -> Channel/EPG -> EPG Grabber Modules e ative EIT.
+            </p>
+
+            <p>
+              16. Configure áudio passthrough e transcode. Vá em <span class="has-text-success has-text-weight-bold">Sistema -> Ajustes -> Audio</span>.
+              <p>Deixe o <span class="has-text-weight-bold">AC3</span> ativado. Praticamente todas as TVs hoje suportam e são capazes de emular surround.</p>
+              <p>Pode deixar transcodificação (transcode/experimental) ativada.</p>
+              <p>Desative o resto se não tiver Home Theater ou soundbar que suporte
+              todos esses formatos.</p>
+            </p>
+            <img src="https://i.imgur.com/ebb2upU.png" alt="">
+            <img src="https://i.imgur.com/6drVGHr.png" alt="">
+
+            <p>
+              17. SSH e Samba estão ativados.
+              <p>SSH - usuário: root | Senha: libreelec</p>
+              <p>Samba - usuário: libreelec | Senha: libreelec</p>
+            </p>
+
+            <p>
+              18. Atualizações por ser feita pela rede.
+              Aperte a tecla vermelha para entrar nas configurações do LibreELEC e vá em Atualizações -> Versões Disponíveis.
+            </p>
+
+            <img src="https://i.imgur.com/mmpovHJ.png"/>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+
+
